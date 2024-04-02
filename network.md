@@ -138,12 +138,39 @@ ex)[http rfc 문서](https://datatracker.ietf.org/doc/html/rfc2616)
 ## 쿠키 / 세션
 
 ### 쿠키
-* **스프링 - 쿠키**
-  * Controller
-    * new Cookie() -> setXXX 로 값을 담아서 헤더에 담아 리턴
-  * 쿠키를 넣어주면 다음요청부터 자동으로 쿠키가 넘어옴
-    * @CookieValue 어노테이션을 활용해 쿠키값 추출
-* 쿠키는 어떤 값들로 구성되어있는지
+* 쿠키 구성요소
+  * name
+    * 쿠키 이름
+  * value
+    * 쿠키의 저장된 값
+  * max-age
+    * 쿠키가 생성된 후 얼마나 유지될지 초 단위로 지정
+    * 지정하지 않으면 세션쿠키, 지정하면 영속쿠키
+  * domain
+    * 쿠키가 사용하는 도메인 지정
+    * 이 값이 현재 탐색 중인 도메인과 일치하지 않을 경우, "타사 쿠키"로 간주되며 브라우저에서 거부.
+  * path
+    * 쿠키가 전송될 서버상의 경로를 지정
+  * secure
+    * HTTPS 프로토콜을 통해해만 전송
+  * httpOnly
+    * HTTP(S) 프로토콜을 통해서만 접근할 수 있음
+* 종류
+  * 세션쿠키
+    * 브라우저가 열려있는 동안에만 유지되는 쿠키
+  * 영속쿠키
+    * 설정된 만료기간까지 브라우저에 저장되는 쿠키
+    * 브라우저를 닫아도 삭제되지 않음
+```java
+Cookie cookie = new Cookie("name","value");
+response.addCookie(cookie); // 헤더에 set-cookie 하는 과정
+```
+* new Cookie() -> setXXX 로 값을 담아서 헤더에 담아 리턴
+* 쿠키를 넣어주면 다음요청부터 자동으로 쿠키가 넘어오고 `@CookieValue` 어노테이션을 활용해 쿠키값 추출
 
 ### 세션
+```java
+HttpSession session = request.getSession(); //request -> HttpServletRequest
+session.setAttribute("id",id);              //key, value 형태로 설정
+```
 * 세션을 활용하여 로드밸런싱을 하는법, 무슨방법이 있고 각각의 특징

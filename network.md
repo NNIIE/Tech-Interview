@@ -173,4 +173,19 @@ response.addCookie(cookie); // 헤더에 set-cookie 하는 과정
 HttpSession session = request.getSession(); //request -> HttpServletRequest
 session.setAttribute("id",id);              //key, value 형태로 설정
 ```
-* 세션을 활용하여 로드밸런싱을 하는법, 무슨방법이 있고 각각의 특징
+* `HttpSession`을 사용하면 스프링은 자동으로 세션을 관리하고 클라이언트에 `JSESSIONID` 쿠키를 전달
+  * 새로운 요청이 없으면 유효시간은 기본 30분이다.
+  * 코드에 직접 또는 properties, yml 설정 파일에서 변경할 수 있다
+* 분산 서버에서의 세션 관리
+  * 외부 스토리지
+    * Spring Session 외부 스토리지를 사용함으로써 분산환경에서 같은 세션데이터를 공유
+  * Sticky Session
+    * 클라이언트에 첫 요청에 응답을 준 서버에 계속 붙는 방법
+    * Cookie를 사용하는 방법과 클라이언트의 IP tracking 방법이 있다
+    * 단점
+      * 특정 서버만 과부하가 올 수 있다.
+      * 특정 서버 라우팅 Fail시 해당 서버에 붙어 있는 세션들이 소실될 수 있다.
+  * Session Clustering
+    * 여러 WAS의 세션을 하나로 묶어 동일한 세션으로 관리하는 방법
+    * 단점
+      * 새로운 서버가 하나 뜰 때마다 기존에 존재하던 WAS에 새로운 서버의 IP/Port를 입력해서 클러스터링해줘야 하는 번거로움이 있다.

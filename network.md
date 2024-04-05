@@ -1,13 +1,13 @@
 
-- [OSI 7계층 / TCP-IP 4계층](#Osi-7계층-tcp-ip-4계층)
+- [OSI 7계층 / TCP-IP 4계층](#osi-7계층--tcp-ip-4계층)
 - [3-way-handshake](#3-way-handshake)
-- [TCP / UDP 차이점](#tcp-udp-차이점)
-- [흐름제어 / 혼잡제어](#흐름제어-혼잡제어)
+- [TCP / UDP 차이점](#tcp--udp-차이점)
+- [흐름제어 / 혼잡제어](#흐름제어--혼잡제어)
 - [HTTP 버전별 차이](#http-버전별-차이)
 - [HTTPS](#https)
-- [rest / restful](#rest-restful)
+- [rest / restful](#rest--restful)
 - [RFC](#rfc)
-- [쿠키 / 세션](#쿠키-세션)
+- [쿠키 / 세션](#쿠키--세션)
  
 --- 
 

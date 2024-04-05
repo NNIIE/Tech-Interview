@@ -1,13 +1,13 @@
 
-- [OSI 7계층 / TCP-IP 4계층](#OSI-7계층/TCP-IP-4계층)
+- [OSI 7계층 / TCP-IP 4계층](#OSI-7계층-/-TCP-IP-4계층)
 - [3-way-handshake](#3-way-handshake)
-- [TCP / UDP 차이점](#TCP/UDP-차이점)
-- [흐름제어 / 혼잡제어](#흐름제어/혼잡제어)
-- [HTTP 버전별 차이점](#HTTP-버전별-차이)
+- [TCP / UDP 차이점](#TCP-/-UDP-차이점)
+- [흐름제어 / 혼잡제어](#흐름제어-/-혼잡제어)
+- [HTTP 버전별 차이](#HTTP-버전별-차이)
 - [HTTPS](#HTTPS)
-- [rest / restful](#rest/restful)
+- [rest / restful](#rest-/-restful)
 - [RFC](#RFC)
-- [쿠키 / 세션](#쿠키/세션)
+- [쿠키 / 세션](#쿠키-/-세션)
  
 --- 
 
@@ -84,7 +84,7 @@ TCP 연결의 신뢰성과 순서보장을 위해 필수적인 절차
 
 <br>
 
-## HTTP 버전별 차이점
+## HTTP 버전별 차이
 * **HTTP 1.0**
   * http header 개념이 도입되어 요청과 응답에 추가 됨
   * 버전정보 및 요청메서드가 같이 전송 됨

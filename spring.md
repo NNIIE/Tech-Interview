@@ -1,6 +1,8 @@
 # spring
 
 - [Filter / Interceptor](#filter--interceptor)
+- [Bean 생성과정](#bean-생성과정)
+- [Spring shutdown](#Spring-shutdown)
  
 --- 
 
@@ -29,5 +31,15 @@
 <br>
 
 [위로](#spring)
+
+## Bean 생성과정
+
+<br>
+
+[위로](#Bean)
+
+## Spring shutdown
+- spring shutdown될때 벌어지는 현상, 옵션
+  - graceful
 
 <br>

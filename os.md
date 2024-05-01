@@ -1,7 +1,7 @@
 # os
 
 - [데드락](#데드락)
-- [뮤텍스 / 세마포어](뮤텍스(Mutex)--세마포어(Semaphore))
+- [뮤텍스((Mutex)) / 세마포어(Semaphore)](뮤텍스(Mutex)--세마포어(Semaphore))
  
 --- 
 

@@ -3,7 +3,7 @@
 - [Filter / Interceptor](#filter--interceptor)
 - [Bean 생성과정](#Bean-생성과정)
 - [Spring shutdown](#Spring-shutdown)
-- [@Mock](#mock)
+- [Mockito](#mockito)
 - [@Transactional](#transactional)
  
 --- 
@@ -75,7 +75,7 @@
 
 [위로](#Bean)
 
-## mock
+## Mockito
 * @Mock
   * 가짜 객체를 생성한다.
   * 실제 동작은 하지 않는다.

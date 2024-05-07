@@ -3,8 +3,8 @@
 - [Filter / Interceptor](#filter--interceptor)
 - [Bean 생성과정](#Bean-생성과정)
 - [Spring shutdown](#Spring-shutdown)
-- [@Spy](#@spy)
-- [@Transactional](#@transactional)
+- [@Spy](#spy)
+- [@Transactional](#transactional)
  
 --- 
 

@@ -3,6 +3,8 @@
 - [Filter / Interceptor](#filter--interceptor)
 - [Bean 생성과정](#Bean-생성과정)
 - [Spring shutdown](#Spring-shutdown)
+- [@Spy](#@spy)
+- [@Transactional](#@transactional)
  
 --- 
 
@@ -48,6 +50,7 @@
    * 빈들이 생성된 순서의 역순으로 소멸
 * 생성자 주입 DI를 선호하는 이유
   * 객체를 사용할때 해당 객체가 갖는 의존성이 모두 갖추어졌다 보장할 수 있다.
+ 
 <br>
 
 [위로](#Bean)
@@ -69,3 +72,17 @@
       - 진행중인 HTTP 요청에 대한 완료 시간
 
 <br>
+
+[위로](#Bean)
+
+## @Spy
+
+<br>
+
+[위로](#Bean)
+
+## @Transactional
+
+<br>
+
+[위로](#Bean)

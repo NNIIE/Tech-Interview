@@ -3,6 +3,7 @@
 - [Statement / Preparedstatement](#statement--preparedstatement)
 - [Connection Pool](#connection-pool)
 - [ACID](#acid)
+- [Tomcat Thread Pool](#tomcat-thread-pool)
  
 --- 
 
@@ -60,3 +61,31 @@ DB에서 안정적으로 트랜잭션을 처리하기 위해 필요한 4가지 �
 ### Durability (지속성)
 - 하나의 트랜잭션이 성공적으로 수행되었다면, 해당 트랜잭션에 대한 기록이 남아야 한다.
 
+<br>
+
+[위로](#network)
+
+<br>
+
+## Tomcat Thread Pool
+tomcat은 request들에 대해 thread pool에서 유후상태인 thread를 꺼내 할당한다.
+
+### Acceptor Thread
+* 클라이언트와 연결을 수락하는 역할을 담당한다. (3 way hand-shake)
+* 연결이 수립되면 대기큐에 저장한다.
+* Acceptor Thread는 상대적으로 높은 우선순위를 가지며, 일반적으로 각 포트마다 하나씩 구성된다.
+
+### Worker Thread
+* 대기큐에서 작업을 꺼내 요청처리 작업을 하고 응답을 반환한다.
+* max 설정으로 지정되는 수가 Worker Thread 갯수이다.
+
+### Thread Pool이 모두 Bloking 상태에 빠진다면?
+* 신규요청은 대기큐로 들어가게 된다.
+* 대기큐가 꽉차면 추가요청은 거부된다. (503 에러)
+* 예방하는 방법으론 외부 api 호출을 비동기로 처리, 타임아웃 설정 등이 있다.
+
+<br>
+
+[위로](#network)
+
+<br>

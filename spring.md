@@ -3,7 +3,7 @@
 - [Filter / Interceptor](#filter--interceptor)
 - [Bean 생성과정](#Bean-생성과정)
 - [Spring shutdown](#Spring-shutdown)
-- [@Spy](#spy)
+- [@Mock](#mock)
 - [@Transactional](#transactional)
  
 --- 
@@ -75,7 +75,21 @@
 
 [위로](#Bean)
 
-## @Spy
+## mock
+* @Mock
+  * 가짜 객체를 생성한다.
+  * 실제 동작은 하지 않는다.
+* @MockBean
+  * 스프링 애플리케이션 컨텍스트에 등록된 빈을 mock 객체로 교체한다.
+  * 실제 동작은 하지 않는다.
+* @Spy
+  * Java 객체의 인스턴스를 스파이 객체로 생성한다.
+  * 스파이 객체는 실제 로직을 수행하지만, 선택적으로 특정 메서드의 행동을 모킹할 수 있다.
+* @SpyBean
+  * 스프링 애플리케이션 컨텍스트에 등록된 빈을 스파이 객체로 교체한다.
+  * 원본 빈과 동일한 동작을 수행하면서, 선택적으로 특정 매서드의 행동을 모킹할 수 있다.
+* @InjectMock
+  * mock, spy 객체를 @InjectMock이 붙은 객체에 주입한다.
 
 <br>
 

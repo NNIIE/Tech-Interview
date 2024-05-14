@@ -91,7 +91,7 @@ tomcat은 request들에 대해 thread pool에서 유후상태인 thread를 꺼�
 
 <br>
 
-## btree
+## btree
 인덱싱에 사용되는 자료구조
 
 ### b-tree

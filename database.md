@@ -161,3 +161,9 @@ auto increment를 동시에 많이 처리하려면?
 [위로](#database)
 
 <br>
+
+* 보완할 부분
+  * btree
+  * insert, update, delete 부하
+  * auto increment
+  * saveAll()

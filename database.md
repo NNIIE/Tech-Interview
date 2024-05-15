@@ -5,6 +5,9 @@
 - [ACID](#acid)
 - [Tomcat Thread Pool](#tomcat-thread-pool)
 - [btree](#btree)
+- [insert update delete 부하](#insert-update-delete-부하)
+- [auto increment](#auto-increment)
+- [saveAll](#saveall)
  
 --- 
 
@@ -109,6 +112,49 @@ tomcat은 request들에 대해 thread pool에서 유후상태인 thread를 꺼�
   * 리프노드에 key, value가 저장된다.
   * internal 노드는 key만 담아두기 때문에 b-tree보다 트리의 높이가 더 낮아진다.
 * 리프노드는 링크드리스트로 연결되어 있고, 옮겨가며 조회할 수 있기때문에 범위검색에 유리하다.
+
+<br>
+
+[위로](#database)
+
+<br>
+
+## insert update delete 부하
+* 인덱스의 재구성
+  * insert
+    * 새로운 키를 삽일할 때, 해당키가 들어갈 적절한 리프노드를 찾음
+    * 리프노드가 가득찰 경우, 새로운 노드를 생성하고 부모노드에 포인터를 추가함
+  * delete
+    * 제거된 후 노드가 너무 적은 키를 가지면, 인접한 노드와의 병합이 필요함
+  * update
+    * 보통 키에 연관된 데이터만 수정하는 경우가 많음
+    * 업데이트가 키값을 포함하면 insert, delete와 비슷한 작업을 필요로 함
+* lock
+  * Exclusive lock: 쓰기작업을 수행할때 발생하고, 읽기작업도 불가능함
+* acid의 지속성에 의한 로그기록
+
+<br>
+
+[위로](#database)
+
+<br>
+
+## auto increment
+auto increment를 동시에 많이 처리하려면?
+* InnoDB엔진 - 로우락 활용
+* insert bulk 처리
+* 여러 샤드로 분할하여 각 샤드가 독립적으로 auto increment를 생성하도록 함
+
+<br>
+
+[위로](#database)
+
+<br>
+
+## saveAll
+* 내부적으로 여러 엔티티에 대해 save() 작업을 반복적으로 수행
+* SimpleJpaRepository클래스에서 주어진 엔티티를 순회하며 각각의 엔티티를 저장
+* @Transactional 어노테이션이 적용되어 모든작업이 하나의 트랜재션으로 처리됨
 
 <br>
 

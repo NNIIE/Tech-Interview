@@ -133,6 +133,15 @@
 * 트랜잭션이 제대로 종료되지 않고 예외가 발생해 연결이 풀로 반환되지 않는경우, 연결 누수가 발생한다.
 * required의 경우 여러 트랜잭션이 하나의 연결풀을 사용한다.
 
+### PlatformTransactionManager
+* mybatis, jpa, redis 등에서 트랜잭션이 동일하게 동작하지 않는다.
+* PlatformTransactionManager == 트랜잭션을 추상화 시킨 인터페이스.
+  * 주요구현체
+    * DataSourceTransactionManager: JDBC
+    * JpaTransactionManager: JPA
+    * HibernateTransactionManager: Hibernate
+
+
 <br>
 
 [위로](#Bean)

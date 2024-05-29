@@ -6,6 +6,7 @@
 - [Mockito](#mockito)
 - [@Transactional](#transactional)
 - [@SpringBootApplication](#springbootapplication)
+- [AOP](#aop)
  
 --- 
 
@@ -147,7 +148,7 @@
 
 [위로](#Bean)
 
-### @SpringBootApplication
+## @SpringBootApplication
 Spring Boot 애플리케이션을 간편하게 정의해서 실행할 수 있도록 하는 어노테이션
 * @Configuration
   * Spring IoC 컨테이너가 관리할 빈을 정의
@@ -156,6 +157,28 @@ Spring Boot 애플리케이션을 간편하게 정의해서 실행할 수 있도
   * ex) 클래스 경로에 spring-boot-starter-web 라이브러리가 있다면, 자동으로 DispatcherServlet 등을 설정
 * @ComponentScan
   * Spring이 지정된 패키지와 그 하위 패키지에서 컴포넌트를 검색하여 빈으로 등록
+
+<br>
+
+[위로](#Bean)
+
+## AOP
+
+### JDK 동적프록시, CGLIB 프록시
+
+### Weaving
+Aspect를 대상 객체에 적용하는 과정으로 컴파일, 로드, 런타임 시점에 이루어짐
+* **compile-time weaving**
+  * 소스코드가 컴파일될 때 aspect를 대상 코드에 적용해서 aspect가 적용된 바이트코드 생성
+  * 컴파일러에 위빙 기능을 통합하여 이 작업을 수행
+* **post-compile-time weaving**
+  * 이미 컴파일된 즉, 바이트코드가 생성된 후 aspect를 적용
+* **load-time weaving**
+  * jvm에 로드될 때 aspect를 적용
+  * 자바 에이전트나 클래스 로더를 통해 클래스가 로드될 때 위빙을 수행
+* **run-time weaving**
+  * 런타임중 프록시 객체를 사용해 aspect를 적용
+  * Spring AOP는 주로 런타임위빙을 통해 프록시 패턴으로 aspect를 적용한다.
 
 <br>
 

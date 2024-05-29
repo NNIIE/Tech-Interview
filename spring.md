@@ -6,6 +6,7 @@
 - [Mockito](#mockito)
 - [@Transactional](#transactional)
 - [@SpringBootApplication](#springbootapplication)
+- [@PostConstruct](#postconstruct)
 - [AOP](#aop)
  
 --- 
@@ -157,6 +158,12 @@ Spring Boot 애플리케이션을 간편하게 정의해서 실행할 수 있도
   * ex) 클래스 경로에 spring-boot-starter-web 라이브러리가 있다면, 자동으로 DispatcherServlet 등을 설정
 * @ComponentScan
   * Spring이 지정된 패키지와 그 하위 패키지에서 컴포넌트를 검색하여 빈으로 등록
+
+<br>
+
+[위로](#Bean)
+
+## @PostConstruct
 
 <br>
 

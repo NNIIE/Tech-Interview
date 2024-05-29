@@ -8,6 +8,7 @@
 - [insert update delete 부하](#insert-update-delete-부하)
 - [auto increment](#auto-increment)
 - [saveAll](#saveall)
+- [undo log](#undo-log)
  
 --- 
 
@@ -154,7 +155,15 @@ auto increment를 동시에 많이 처리하려면?
 ## saveAll
 * 내부적으로 여러 엔티티에 대해 save() 작업을 반복적으로 수행
 * SimpleJpaRepository클래스에서 주어진 엔티티를 순회하며 각각의 엔티티를 저장
-* @Transactional 어노테이션이 적용되어 모든작업이 하나의 트랜재션으로 처리됨
+* @Transactional 어노테이션이 적용되어 모든작업이 하나의 트랜잭션으로 처리됨
+
+<br>
+
+[위로](#database)
+
+<br>
+
+## undo log
 
 <br>
 
